@@ -278,7 +278,7 @@ body{
 .target_formacion{
     display: flex;
     justify-content: space-around;
-    font-size: clamp(18px, 2vw, 25px);
+    font-size: clamp(18px, 2vw, 22px);
     width: 80%;
     margin: auto;
     flex-direction: column;
