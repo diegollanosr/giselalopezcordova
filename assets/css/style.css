@@ -291,29 +291,34 @@ body{
 }
 .targets_skills{
     width: 90%;
-    margin: auto;
+    margin: 25px auto;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    background: var(--color-marron-claro);
+    border-radius: 15px 0;
     align-items: center;
-    justify-content: center;
-    padding-top: 20px;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 10px 0 10px;
+    border: 10px solid var(--color-marron-claro);
+    overflow: auto;
 }
 .target_skills{
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 200px;
     height: 200px;
     border: 2px solid var(--color-morado);
     border-radius: 15px 0;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     padding: 10px;
     color: var(--color-morado);
     font-size: 19px;
     font-weight: bold;
+    background: var(--color--background);
 }
 .icon{
     --icon-zise: 60px;
@@ -356,14 +361,14 @@ body{
 }
 .contenedor_videos,
 .contenedor_imagenes{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90%;
+    width: 85%;
     height: 375px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
     overflow: auto;
     border-radius: 15px 0;
+    /* flex-wrap: wrap; */
 }
 .contenedor_videos{
     height: 630px;
@@ -383,6 +388,7 @@ body{
     border-radius: 25px 0;
     border: 5px solid var(--color-terracota);
     background: var(--color-terracota);
+    margin: auto;
 }
 /* configuracion footer*/
 .footer{
@@ -419,15 +425,6 @@ body{
     color: var(--color-dorado);
 }
 @media screen and (max-width: 1100px) {
-    .targets_skills{
-        height: 500px;
-        overflow: auto;
-        background: var(--color-marron-claro);
-        border-radius: 15px 0;
-    }
-    .target_skills{
-        background: var(--color--background);
-    }
     .home{
         min-height: 40vh;
     }
@@ -506,7 +503,7 @@ body{
         height: calc(15vh + 70px);
     }
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 690px) {
     .home{
         flex-direction: column;
         gap: 0;
