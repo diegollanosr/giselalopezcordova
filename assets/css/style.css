@@ -1,4 +1,5 @@
 :root{
+    color-scheme: light dark;
     --color-blanco: #E4E7EE;
     --color-negro: #06111e;
     --color-dorado: #e7a90c;
@@ -9,6 +10,12 @@
     --color-almendra: #f5ede6;
     --color-marron: #6e3636;
     --color-terracota: #c97d60;
+    --color-azul: #406af3;
+    --color-gris: #2B2620;
+    --color-targ-fecha: var(--color-terracota);
+    --background-informacion: var(--color-terracota);
+    --color-subtitulo: var(--color-negro);
+    --color--icons: var(--color-marron);
     --color--background: var(--color-almendra);
     --color--texto: var(--color-negro);
     --color-boton: var(--color-fuxia);
@@ -36,6 +43,14 @@ a{
 button{
     border: none;
     cursor: pointer;
+}
+.dark{
+    --color-subtitulo: var(--color-azul);
+    --color--background: var(--color-gris);
+    --color--texto: var(--color-almendra);
+    --color--icons: #F9B5B2;
+    --color-targ-fecha: var(--color-marron-claro);
+    --background-informacion: #5c3022;
 }
 /*Personalizacion Scroll*/
     *::-webkit-scrollbar{
@@ -65,7 +80,9 @@ button{
 
 body{
     background: var(--color--background);
+    color: var(--color--texto);
     font-family: var(--font-general);
+    font-size: clamp(18px, 1.1vw, 40px);
 }
 .header{
     width: 100%;
@@ -78,7 +95,7 @@ body{
     z-index: 1000;
 }
 .navegacion{
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-around;
 }
@@ -106,24 +123,24 @@ body{
     display: flex;
     flex-direction: column;
     font-family: var(--font-nombre);
-    font-size: clamp(25px, 3vw, 60px);
+    font-size: clamp(25px, 3vw, 70px);
     color: var(--color-rosado);
     font-weight: bolder;
 }
-.body.scroll .name,
+.scroll .name,
 .logoNombre{
     opacity: 0;
 }
-.body.scroll .logoNombre{
+.scroll .logoNombre{
     opacity: 1;
 }
 .navegacionUl{
   display: flex;
-  gap: 3vw;
+  gap: 1vw;
   align-items: center;
 }
 .navegacion_li{
-    font-size: clamp(18px, 2vw, 23px);
+    font-size: clamp(18px, 1.3vw, 40px);
     height: 60%;
     padding: 5px;
     display: flex;
@@ -131,12 +148,18 @@ body{
     align-items: center;
 }
 .navegacion_link{
-    color: var(--color-marron);
+    color: var(--color--icons);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+.fa-moon{
+    color: #CB1A9B;
+}
+.fa-sun{
+    color: var(--color-dorado);
 }
 .navegacion_link.mostrar,
 .navegacion_li:hover .navegacion_link{
@@ -162,11 +185,9 @@ body{
     min-height: 75vh;
 }
 .img_gissela{
-    max-width: 450px;
-    width: 30vw;
+    width: 25vw;
     min-width: 250px;
-    max-height: 450px;
-    height: 30vw;
+    height: 25vw;
     min-height: 250px;
     background: var(--color-terracota) var(--img-gissela);
     background-size: cover;
@@ -180,21 +201,20 @@ body{
     text-align: center;    
 }
 .name{
-    font-size: clamp(28px, 4vw, 50px);
+    font-size: clamp(28px, 4vw, 90px);
 }
 .titulo{
     width: 80%;
     margin: auto;
     color: var(--color-azul-oscuro);
-    font-size: clamp(18px, 1.5vw, 24px);
     text-align: center;
 }
 .subtitulo{
     margin: auto;
     font-family: var(--font-courgette);
-    font-size: clamp(23px, 2.1vw, 30px);
+    font-size: clamp(23px, 1.7vw, 50px);
     font-weight: bold;
-    color: var(--color-negro);
+    color: var(--color-subtitulo);
     text-align: center;
 }
 .boton_presentacion{
@@ -202,7 +222,7 @@ body{
     width: 45%;
     margin: auto;
     height: 2em;
-    font-size: clamp(18px, 2vw , 25px);
+    font-size: clamp(18px, 1.5vw, 45px);
     border-radius: 20px;
     color: var(--color-boton);
     border: 2px solid var(--color-boton);
@@ -222,7 +242,7 @@ body{
     flex-wrap: wrap;
 }
 .boton_presentacion i{
-    font-size: clamp(22px, 2.2vw , 32px);
+    font-size: clamp(25px, 1.7vw, 50px);
     font-weight: bold;
 }
 .boton_presentacion:hover{
@@ -239,7 +259,7 @@ body{
 .informacion{
     display: flex;
     width: 100%;
-    background: var(--color-terracota);
+    background: var(--background-informacion);
     min-height: 50vh;
     padding: 50px 5%;
     box-sizing: border-box;
@@ -252,11 +272,9 @@ body{
     gap: 15px;
 }
 .img_informacion{
-    max-width: 350px;
-    width: 30vw;
+    width: 20vw;
     min-width: 250px;
-    max-height: 350px;
-    height: 30vw;
+    height: 20vw;
     min-height: 250px;
     background: var(--color--background) var(--img-gissela-2);
     background-size: cover;
@@ -265,7 +283,6 @@ body{
 .parrafo{
     text-align: justify;
     line-height: 1.5em;
-    font-size: clamp(14px, 2vw, 20px);
     color: var(--color--texto);
     width: 85%;
     margin: auto;
@@ -273,7 +290,6 @@ body{
 .target_formacion{
     display: flex;
     justify-content: space-around;
-    font-size: clamp(18px, 2vw, 22px);
     width: 80%;
     margin: auto;
     flex-direction: column;
@@ -287,7 +303,7 @@ body{
 .target_fecha{
     width: 100%;
     text-align: right;
-    color: var(--color-terracota);
+    color: var(--color-targ-fecha);
 }
 .targets_skills{
     width: 90%;
@@ -316,9 +332,10 @@ body{
     gap: 20px;
     padding: 10px;
     color: var(--color-morado);
-    font-size: 19px;
+    /* font-size: 19px; */
+    font-size: clamp(18px, .9vw, 35px);
     font-weight: bold;
-    background: var(--color--background);
+    background: var(--color-almendra);
 }
 .icon{
     --icon-zise: 60px;
@@ -334,7 +351,6 @@ body{
     justify-content: center;
     align-items: center;
     justify-items: center;
-    font-size: 20px;
 }
 .target_experiencia{
     width: 75%;
@@ -352,7 +368,7 @@ body{
 }
 .experiencia_cargo{
     width: 95%;
-    color: var(--color-marron);
+    color: var(--color--icons);
     font-weight: bold;
 }
 .experiencia_descripcion{
@@ -370,7 +386,6 @@ body{
     border: 10px solid var(--color-marron-claro);
     background: var(--color-marron-claro);
     border-radius: 15px 0;
-    /* flex-wrap: wrap; */
 }
 .contenedor_videos{
     height: 630px;
@@ -393,7 +408,7 @@ body{
 }
 /* configuracion footer*/
 .footer{
-    color: var(--color--background);
+    color: var(--color-almendra);
     background: var(--color-marron);
     margin: 2em auto 0;
     width: 100%;
@@ -404,22 +419,17 @@ body{
     height: 15vh;
     gap: 15px;
 }
-.footerTexto{
-    color: var(--color--background);
-    font-size: 1.1em;
-}
 .footerUser{
     font-family:var(--font-courgette);
     color: var(--color-dorado);
-    font-size: 1.1em;
 }
 .footerRedesRociales{
     display: flex;
 	gap: 15px;
 }
 .footerIcons{
-	font-size: clamp(25px, 3vw, 38px);
-	color: var(--color--background);
+	font-size: clamp(25px, 2.2vw, 50px);
+	color: var(--color-almendra);
 }
 .footerIcons:hover{
     font-weight: bold;
@@ -480,9 +490,6 @@ body{
     }
     .img_informacion{
         display: none;
-    }
-    .informacion{
-        background-color: var(--color-marron-claro);
     }
     .target_informacion{
         width: 95%;
